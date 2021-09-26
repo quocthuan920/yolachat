@@ -45,15 +45,11 @@ const userSchema = mongoose.Schema({
     require: [true, 'Last name cannot be left blank'],
     maxlength: [10, 'Last name must have less than 10 characters'],
   },
-  logs: {
-    created_at: {
-      type: Date,
-      default: new Date(Date.now()).toISOString(),
-    },
-    updated_at: {
-      type: Date,
-      default: new Date(Date.now()).toISOString(),
-    },
+  created_at: {
+    type: Date,
+  },
+  updated_at: {
+    type: Date,
   },
   state: {
     type: String,

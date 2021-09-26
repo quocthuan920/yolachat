@@ -10,14 +10,11 @@ const messageSchema = mongoose.Schema({
     type: String,
     maxlength: [512, 'Message must less than 512 characters'],
   },
-  logs: {
-    created_at: {
-      type: Date,
-      default: new Date(Date.now()).toISOString(),
-    },
-    delete_at: {
-      type: Date,
-    },
+  created_at: {
+    type: Date,
+  },
+  delete_at: {
+    type: Date,
   },
   state: {
     type: String,
@@ -25,6 +22,5 @@ const messageSchema = mongoose.Schema({
     default: 'created',
   },
 });
-
 const Message = mongoose.model('Message', messageSchema);
 module.exports = Message;

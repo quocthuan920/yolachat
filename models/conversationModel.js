@@ -6,15 +6,8 @@ const conversationSchema = mongoose.Schema({
     maxlength: [40, 'Title must have less than 40 character '],
     trim: true,
   },
-  logs: {
-    created_at: {
-      type: String,
-      default: new Date(Date.now()).toISOString(),
-    },
-    update_at: {
-      type: String,
-      default: new Date(Date.now()).toISOString(),
-    },
+  created_at: {
+    type: Date,
   },
   state: {
     type: String,

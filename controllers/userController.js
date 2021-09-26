@@ -30,6 +30,9 @@ exports.getUserById = async (req, res) => {
 };
 exports.postUser = async (req, res) => {
   try {
+    req.body.created_at = Date.now();
+    req.body.updated_at = Date.now();
+
     const users = await User.create(req.body);
     res.status(200).json({
       status: 'success',

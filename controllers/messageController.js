@@ -30,7 +30,10 @@ exports.getMessageById = async (req, res) => {
 };
 exports.postMessage = async (req, res) => {
   try {
+    req.body.created_at = Date.now();
+    req.body.updated_at = Date.now();
     const Messages = await Message.create(req.body);
+
     res.status(200).json({
       status: 'success',
       data: Messages,
